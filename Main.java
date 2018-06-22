@@ -5,8 +5,8 @@ class Main {
     public static void main(String[] args) {
 
         String TextString = "What a perfect weatheeear today. ciiiivilian. " +
-                "An engeneeer. check. I checked my cooooooooat. It is success! " +
-                "I would like to druuuoonk some coffee and go for a walk. The weather is finnnne !";
+                "An engeneeer. check. I checked my cooooooooat. It is success! TTTTtte? " +
+                "I would like to druuuoonk some coffee and go for a walk. The weather is finnnne!";
         System.out.print(TextString + "\n");
         TextString = removeArticles(TextString);
         System.out.print(TextString + "\n");
@@ -44,7 +44,9 @@ class Main {
                     .replaceAll("oo", "u");
             isContain = text.contains("Ee|ee|Oo|oo");
         }
-        text = text.replaceAll("([a-z])\\1+", "$1");
+        text = text.replaceAll("([a-z])\\1+", "$1")
+                    .replaceAll("([A-Z])\\1+", "$1")
+                    .replaceAll("([A-Z])([a-z])", "$1");
         return text;
     }
 
@@ -52,7 +54,7 @@ class Main {
         char[] chArray1 = text.toCharArray();
         for (int i = 1; i < chArray1.length - 1; i++) {
 
-            if (chArray1[i] == 'e' & chArray1[i - 1] != ' ' & chArray1[i + 1] == ' ') {
+            if (chArray1[i] == 'e' & chArray1[i - 1] != ' ' & (chArray1[i + 1] == ' ' | chArray1[i + 1] == '!' | chArray1[i + 1] == '.' | chArray1[i + 1] == '?') |  chArray1[i + 1] == '"') {
 
                 chArray1[i] = ' ';
             }
@@ -60,5 +62,6 @@ class Main {
         }
 
         return new String(chArray1);
+        //return text.replaceAll("(\\we\\s)|(\\we\\W)", " ");
     }
 }
