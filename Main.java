@@ -54,7 +54,8 @@ class Main {
         char[] chArray1 = text.toCharArray();
         for (int i = 1; i < chArray1.length - 1; i++) {
 
-            if (chArray1[i] == 'e' & chArray1[i - 1] != ' ' & (chArray1[i + 1] == ' ' | chArray1[i + 1] == '!' | chArray1[i + 1] == '.' | chArray1[i + 1] == '?') |  chArray1[i + 1] == '"') {
+            if (chArray1[i] == 'e' & chArray1[i - 1] != ' ' & (chArray1[i + 1] == ' '  | chArray1[i + 1] == '!' |
+                    chArray1[i + 1] == '.' | chArray1[i + 1] == '?') |  chArray1[i + 1] == ':' | chArray1[i + 1] == '"') {
 
                 chArray1[i] = ' ';
             }
