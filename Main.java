@@ -6,7 +6,7 @@ class Main {
 
         String TextString = "What a perfect weatheeear today. ciiiivilian. " +
                 "An engeneeer. check. I checked my cooooooooat. It is success! TTTTtte? " +
-                "I would like to druuuoonk some coffee and go for a walk. The weather is finnnne!";
+                "I would like to druuuoonk some coffee and go for a walk. The weather is finnnne! eee";
         System.out.print(TextString + "\n");
         TextString = removeArticles(TextString);
         System.out.print(TextString + "\n");
@@ -59,6 +59,9 @@ class Main {
 
                 chArray1[i] = ' ';
             }
+            if (chArray1[chArray1.length-1] == 'e') {chArray1[chArray1.length-1] = ' ';
+            }
+
 
         }
 
